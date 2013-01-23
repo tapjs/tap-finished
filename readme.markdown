@@ -2,6 +2,10 @@
 
 detect when [tap output](http://testanything.org) is finished
 
+[![build status](https://secure.travis-ci.org/substack/tap-finished.png)](http://travis-ci.org/substack/tap-finished)
+
+[![browser support](http://ci.testling.com/substack/tap-finished.png)](http://ci.testling.com/substack/tap-finished)
+
 Normally with [tap-parser](https://github.com/substack/tap-parser) the
 `'results'` event fires only after the stream is closed. This module lets you
 detect whether a stream seems closed without waiting for the `'end'` event.
