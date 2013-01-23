@@ -1,10 +1,20 @@
 var parser = require('tap-parser');
 var through = require('through');
 
-module.exports = function (cb) {
+module.exports = function (opts, cb) {
+    if (typeof opts === 'function') {
+        cb = opts;
+        opts = {};
+    }
+    if (!opts) opts = {};
+    if (opts.wait === undefined) opts.wait = 1000;
+    
     var p = parser();
     var seen = { plan: null, asserts: 0 };
     var seenEverything = false;
+    var ended = false;
+    
+    p.on('end', function () { ended = true });
     
     p.on('assert', function (a) {
         seen.asserts ++;
@@ -35,6 +45,9 @@ module.exports = function (cb) {
     
     function finish () {
         p.on('results', cb);
-        p.end();
+        if (opts.wait && !ended) {
+            setTimeout(function () { p.end() }, opts.wait);
+        }
+        else p.end();
     }
 };

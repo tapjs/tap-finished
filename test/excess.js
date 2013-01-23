@@ -13,15 +13,16 @@ var lines = [
 ];
 
 test(function (t) {
-    t.plan(7);
+    t.plan(8);
     var done = false;
     
-    var stream = finished(function (results) {
-        t.equal(done, false);
+    var stream = finished({ wait: 250 }, function (results) {
+        t.equal(done, true);
         
-        t.equal(results.pass.length, 2);
+        t.equal(results.pass.length, 3);
         t.equal(results.pass[0].ok, true);
         t.equal(results.pass[1].ok, true);
+        t.equal(results.pass[2].ok, true);
         t.equal(results.fail.length, 0);
         
         t.equal(results.errors.length, 1);
