@@ -19,7 +19,7 @@ var lines = [
 test(function (t) {
     t.plan(1);
     
-    var stream = finished(function (results) {
+    var stream = finished({ wait: 0 }, function (results) {
         t.fail('should not have finished');
     });
     

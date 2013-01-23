@@ -21,7 +21,7 @@ test(function (t) {
     t.plan(6);
     var done = false;
     
-    var stream = finished(function (results) {
+    var stream = finished({ wait: 0 }, function (results) {
         t.equal(done, false);
         
         t.equal(results.pass.length, 1);
