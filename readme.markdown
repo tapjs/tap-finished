@@ -1,6 +1,6 @@
 # tap-finished
 
-detect when a [tap output](http://testanything.org) is finished
+detect when [tap output](http://testanything.org) is finished
 
 Normally with [tap-parser](https://github.com/substack/tap-parser) the
 `'results'` event fires only after the stream is closed. This module lets you
