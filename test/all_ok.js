@@ -4,17 +4,10 @@ var lines = [
     'TAP version 13',
     '# wait',
     'ok 1 (unnamed assert)',
-    'not ok 2 should be equal',
-    '  ---',
-    '    operator: equal',
-    '    expected: 5',
-    '    actual:   4',
-    '  ...',
-    '',
+    'ok 2 should be equal',
     '1..2',
     '# tests 2',
-    '# pass  1',
-    '# fail  1'
+    '# pass  2'
 ];
 
 test(function (t) {
@@ -24,13 +17,12 @@ test(function (t) {
     var stream = finished(function (results) {
         t.equal(done, false);
         
-        t.equal(results.pass.length, 1);
+        t.equal(results.pass.length, 2);
         t.equal(results.pass[0].ok, true);
+        t.equal(results.pass[1].ok, true);
+        t.equal(results.fail.length, 0);
         
-        t.equal(results.fail.length, 1);
-        t.equal(results.fail[0].ok, false);
-        
-        t.equal(results.ok, false);
+        t.ok(results.ok);
     });
     
     var iv = setInterval(function () {

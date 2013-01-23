@@ -17,8 +17,10 @@ module.exports = function (cb) {
     });
     
     p.on('results', function () {
+        if (seenEverything) return;
+        
         seenEverything = true;
-        cb(p.results);
+        finish();
     });
     
     return p;
@@ -28,6 +30,11 @@ module.exports = function (cb) {
         if (seen.plan === null || seen.asserts < seen.plan) return;
         
         seenEverything = true;
-        cb(p.results);
+        finish();
+    }
+    
+    function finish () {
+        p.on('results', cb);
+        p.end();
     }
 };
