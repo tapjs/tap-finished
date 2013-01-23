@@ -18,7 +18,7 @@ var lines = [
 ];
 
 test(function (t) {
-    t.plan(5);
+    t.plan(6);
     var done = false;
     
     var stream = finished(function (results) {
@@ -29,6 +29,8 @@ test(function (t) {
         
         t.equal(results.fail.length, 1);
         t.equal(results.fail[0].ok, false);
+        
+        t.ok(results.ok);
     });
     
     var iv = setInterval(function () {
