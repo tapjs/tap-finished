@@ -11,7 +11,7 @@ module.exports = function (opts, cb) {
     
     var p = parser();
     var seen = { plan: null, asserts: 0 };
-    var seenEverything = false;
+    var finished = false;
     var ended = false;
     
     p.on('end', function () { ended = true });
@@ -27,23 +27,21 @@ module.exports = function (opts, cb) {
     });
     
     p.on('results', function () {
-        if (seenEverything) return;
-        
-        seenEverything = true;
+        if (finished) return;
         finish();
     });
     
     return p;
     
     function check () {
-        if (seenEverything) return;
+        if (finished) return;
         if (seen.plan === null || seen.asserts < seen.plan) return;
-        
-        seenEverything = true;
         finish();
     }
     
     function finish () {
+        finished = true;
+        
         p.on('results', cb);
         if (opts.wait && !ended) {
             setTimeout(function () { p.end() }, opts.wait);
