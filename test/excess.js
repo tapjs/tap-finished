@@ -9,7 +9,7 @@ var lines = [
     '# tests 2',
     '# pass  1',
     '# fail  1',
-    'ok 3 third thing',
+    'ok 3 third thing'
 ];
 
 test(function (t) {

@@ -14,6 +14,13 @@
     "scripts": {
         "test": "tap test/*.js"
     },
+    "testling": {
+        "files": "test/*.js",
+        "browsers": [
+            "ie/8", "ie/9", "firefox/latest", "chrome/latest",
+            "safari/latest", "opera/latest"
+        ]
+    },
     "repository": {
         "type": "git",
         "url": "git://github.com/substack/tap-finished.git"
