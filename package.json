@@ -1,0 +1,35 @@
+{
+    "name": "tap-finished",
+    "version": "0.0.0",
+    "description": "detect when tap output is finished",
+    "main": "index.js",
+    "dependencies": {
+        "through": "~2.1.0",
+        "tap-parser": "~0.0.2"
+    },
+    "devDependencies": {
+        "tap": "~0.3.0",
+        "tape": "~0.2.2"
+    },
+    "scripts": {
+        "test": "tap test/*.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/tap-finished.git"
+    },
+    "homepage": "https://github.com/substack/tap-finished",
+    "keywords": [
+        "tap",
+        "parse",
+        "stream",
+        "complete",
+        "test"
+    ],
+    "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+    },
+    "license": "MIT"
+}
