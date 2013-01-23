@@ -28,7 +28,7 @@ test(function (t) {
         t.equal(results.pass[0].ok, true);
         
         t.equal(results.fail.length, 1);
-        t.equal(results.fail[1].ok, false);
+        t.equal(results.fail[0].ok, false);
     });
     
     var iv = setInterval(function () {

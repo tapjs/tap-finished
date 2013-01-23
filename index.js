@@ -25,7 +25,7 @@ module.exports = function (cb) {
     
     function check () {
         if (seenEverything) return;
-        if (seen.plan !== null || seen.asserts < seen.plan) return;
+        if (seen.plan === null || seen.asserts < seen.plan) return;
         
         seenEverything = true;
         cb(p.results);
