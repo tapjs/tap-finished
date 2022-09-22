@@ -20,19 +20,35 @@ var lines = [
 ];
 
 test(function (t) {
-	t.plan(6);
+	t.plan(2);
 	var done = false;
 
 	var stream = finished({ wait: 0 }, function (results) {
 		t.equal(done, false);
 
-		t.equal(results.pass.length, 1);
-		t.equal(results.pass[0].ok, true);
-
-		t.equal(results.fail.length, 1);
-		t.equal(results.fail[0].ok, false);
-
-		t.equal(results.ok, false);
+		t.deepLooseEqual(results, {
+			ok: false,
+			count: 2,
+			pass: 1,
+			fail: 1,
+			bailout: false,
+			todo: 0,
+			skip: 0,
+			plan: { // this is a FinalPlan instance
+				start: 1,
+				end: 2,
+				skipAll: false,
+				skipReason: '',
+				comment: ''
+			},
+			failures: [ // these are Result instances
+				{ ok: false, id: 2, name: 'should be equal', diag: { operator: 'equal', expected: 5, actual: 4 } }
+			],
+			asserts: [ // these are Result instances
+				{ ok: true, id: 1, name: '(unnamed assert)' },
+				{ ok: false, id: 2, name: 'should be equal', diag: { operator: 'equal', expected: 5, actual: 4 } }
+			]
+		}, 'results matches expected object');
 	});
 
 	stream.write(lines.join('\n'));

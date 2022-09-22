@@ -1,6 +1,7 @@
 'use strict';
 
 var parser = require('tap-parser');
+var assign = require('object.assign');
 
 module.exports = function (opts, cb) {
 	if (typeof opts === 'function') {
@@ -11,14 +12,16 @@ module.exports = function (opts, cb) {
 	if (opts.wait === undefined) { opts.wait = 1000; }
 
 	var p = parser();
-	var seen = { plan: null, asserts: 0 };
+	var seen = { plan: null, asserts: [] };
 	var finished = false;
 	var ended = false;
 
 	function finish() {
 		finished = true;
 
-		p.on('results', cb);
+		p.on('complete', function (finalResult) {
+			cb(assign({}, finalResult, { asserts: seen.asserts }));
+		});
 		if (opts.wait && !ended) {
 			setTimeout(function () { p.end(); }, opts.wait);
 		} else { p.end(); }
@@ -26,14 +29,14 @@ module.exports = function (opts, cb) {
 
 	function check() {
 		if (finished) { return; }
-		if (seen.plan === null || seen.asserts < seen.plan) { return; }
+		if (seen.plan === null || seen.asserts.length < seen.plan) { return; }
 		finish();
 	}
 
 	p.on('end', function () { ended = true; });
 
-	p.on('assert', function () {
-		seen.asserts++;
+	p.on('assert', function (result) {
+		seen.asserts.push(result);
 		check();
 	});
 
@@ -42,7 +45,7 @@ module.exports = function (opts, cb) {
 		check();
 	});
 
-	p.on('results', function () {
+	p.on('complete', function () {
 		if (finished) { return; }
 		finish();
 	});

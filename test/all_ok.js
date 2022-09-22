@@ -13,18 +13,33 @@ var lines = [
 ];
 
 test(function (t) {
-	t.plan(6);
+	t.plan(2);
 	var done = false;
 
 	var stream = finished({ wait: 0 }, function (results) {
 		t.equal(done, false);
 
-		t.equal(results.pass.length, 2);
-		t.equal(results.pass[0].ok, true);
-		t.equal(results.pass[1].ok, true);
-		t.equal(results.fail.length, 0);
-
-		t.ok(results.ok);
+		t.deepLooseEqual(results, {
+			ok: true,
+			count: 2,
+			pass: 2,
+			fail: 0,
+			bailout: false,
+			todo: 0,
+			skip: 0,
+			plan: { // FinalPlan instance
+				start: 1,
+				end: 2,
+				skipAll: false,
+				skipReason: '',
+				comment: ''
+			},
+			failures: [],
+			asserts: [ // Result instances
+				{ ok: true, id: 1, name: '(unnamed assert)' },
+				{ ok: true, id: 2, name: 'should be equal' }
+			]
+		}, 'results matches expected object');
 	});
 
 	var iv = setInterval(function () {

@@ -4,7 +4,8 @@
     "description": "detect when tap output is finished",
     "main": "index.js",
     "dependencies": {
-        "tap-parser": "^0.2.1"
+        "object.assign": "^4.1.4",
+        "tap-parser": "^5.4.0"
     },
     "devDependencies": {
         "@ljharb/eslint-config": "^21.0.0",
