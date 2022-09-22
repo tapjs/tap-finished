@@ -1,0 +1,22 @@
+{
+    "root": true,
+
+    "extends": "@ljharb",
+
+    "rules": {
+        "func-style": ["error", "declaration"],
+        "max-statements-per-line": ["error", { "max": 2 }],
+        "no-param-reassign": "warn",
+        "no-plusplus": "warn",
+        "sort-keys": "off",
+    },
+
+    "overrides": [
+        {
+            "files": "example/**",
+            "rules": {
+                "no-console": "off"
+            },
+        },
+    ],
+}
