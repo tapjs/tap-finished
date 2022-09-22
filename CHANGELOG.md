@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.0.2](https://github.com/tapjs/tap-finished/compare/v0.0.1...v0.0.2) - 2022-09-22
+
+### Commits
+
+- [meta] add `auto-changelog` [`264bd40`](https://github.com/tapjs/tap-finished/commit/264bd4021842b40aa4d66cd5089221b665e346b7)
+- [meta] update URLs [`459890e`](https://github.com/tapjs/tap-finished/commit/459890e188fc332b7d72f47dd8843f5fa7d15490)
+- [Deps] update `tap-parser`, `through` [`c965877`](https://github.com/tapjs/tap-finished/commit/c965877e77bf5175f655ec425dda89263789f17b)
+- [meta] use `npmignore` to autogenerate an npmignore file [`e179964`](https://github.com/tapjs/tap-finished/commit/e1799648cc1e5d4d2b999c5b8ae5b5afc609c761)
+- Only apps should have lockfiles [`6064d41`](https://github.com/tapjs/tap-finished/commit/6064d41d93ae50e5e27728f3baf9af7c11e4e6a5)
+- [Dev Deps] update `tap`, `tape` [`df66f72`](https://github.com/tapjs/tap-finished/commit/df66f72458c8c89fb331d366b0e853d942689041)
+
 ## [v0.0.1](https://github.com/tapjs/tap-finished/compare/0.0.0...v0.0.1) - 2022-09-22
 
 ### Commits
