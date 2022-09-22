@@ -4,8 +4,8 @@
     "description": "detect when tap output is finished",
     "main": "index.js",
     "dependencies": {
-        "through": "~2.3.4",
-        "tap-parser": "~0.2.0"
+        "tap-parser": "^0.2.1",
+        "through": "^2.3.8"
     },
     "devDependencies": {
         "tap": "~0.4.6",
@@ -17,8 +17,12 @@
     "testling": {
         "files": "test/*.js",
         "browsers": [
-            "ie/8", "ie/9", "firefox/latest", "chrome/latest",
-            "safari/latest", "opera/latest"
+            "ie/8",
+            "ie/9",
+            "firefox/latest",
+            "chrome/latest",
+            "safari/latest",
+            "opera/latest"
         ]
     },
     "repository": {
