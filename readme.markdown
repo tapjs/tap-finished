@@ -2,11 +2,11 @@
 
 detect when [tap output](http://testanything.org) is finished
 
-[![build status](https://secure.travis-ci.org/substack/tap-finished.png)](http://travis-ci.org/substack/tap-finished)
+[![build status](https://secure.travis-ci.org/tapjs/tap-finished.png)](http://travis-ci.org/tapjs/tap-finished)
 
-[![browser support](http://ci.testling.com/substack/tap-finished.png)](http://ci.testling.com/substack/tap-finished)
+[![browser support](http://ci.testling.com/tapjs/tap-finished.png)](http://ci.testling.com/tapjs/tap-finished)
 
-Normally with [tap-parser](https://github.com/substack/tap-parser) the
+Normally with [tap-parser](https://github.com/tapjs/tap-parser) the
 `'results'` event fires only after the stream is closed. This module lets you
 detect whether a stream seems closed without waiting for the `'end'` event.
 
@@ -45,9 +45,9 @@ We'll use `cat` to create a stream that contains the tap output but doesn't end
 and then pipe that to the script:
 
 ```
-$ cat tap_output.txt /dev/stdin | node stream.js 
+$ cat tap_output.txt /dev/stdin | node stream.js
 { ok: false,
-  asserts: 
+  asserts:
    [ { ok: true, number: 1, name: '(unnamed assert)' },
      { ok: false, number: 2, name: 'should be equal' } ],
   pass: [ { ok: true, number: 1, name: '(unnamed assert)' } ],
@@ -68,9 +68,9 @@ var finished = require('tap-finished')
 
 ## var ws = finished(opts={}, cb)
 
-Return a writable stream `ws` that consumes tap input. 
+Return a writable stream `ws` that consumes tap input.
 `cb(results)` fires with the `results` from
-[tap-parser](https://github.com/substack/tap-parser)
+[tap-parser](https://github.com/tapjs/tap-parser)
 when the stream seems finished or when the `'end'` event occurs.
 
 `opts.wait` controls how long to wait in milliseconds for more input before

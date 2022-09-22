@@ -23,9 +23,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/substack/tap-finished.git"
+        "url": "git://github.com/tapjs/tap-finished.git"
     },
-    "homepage": "https://github.com/substack/tap-finished",
+    "homepage": "https://github.com/tapjs/tap-finished",
     "keywords": [
         "tap",
         "parse",
