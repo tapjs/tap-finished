@@ -1,5 +1,5 @@
 {
-    "name": "tap-finished",
+    "name": "@tapjs/tap-finished",
     "version": "0.0.1",
     "description": "detect when tap output is finished",
     "main": "index.js",
