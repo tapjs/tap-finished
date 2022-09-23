@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.0.3](https://github.com/tapjs/tap-finished/compare/v0.0.2...v0.0.3) - 2022-09-22
+
+### Commits
+
+- [eslint] add eslint [`f98712c`](https://github.com/tapjs/tap-finished/commit/f98712c1fa5fbb0ee1708f3e4d6e8e40f62e7351)
+- [Deps] update `tap-parser` to v5 [`f43ad39`](https://github.com/tapjs/tap-finished/commit/f43ad393e08fd54db518216f56ba800415b2d2c8)
+- [actions] add reusable workflows [`16bdfed`](https://github.com/tapjs/tap-finished/commit/16bdfed0e39b6562b7f8e612079ed25df57be8c9)
+- [meta] add `funding`; create `FUNDING.yml` [`50506a8`](https://github.com/tapjs/tap-finished/commit/50506a8d09acc01f578b2b74aff31d0c21a6ffe5)
+- [meta] remove travis.yml; exclude example files [`b5de8d9`](https://github.com/tapjs/tap-finished/commit/b5de8d9d02cb295004e91732fe104a46f3396368)
+- [Deps] remove unused `through` dep [`f0ba221`](https://github.com/tapjs/tap-finished/commit/f0ba2215fd4b23b50d0ba7364b9a671bd703d293)
+- [Dev Deps] update `tap` [`36ee506`](https://github.com/tapjs/tap-finished/commit/36ee506e32b2fd2eed5199c050279107d760c5ba)
+
 ## [v0.0.2](https://github.com/tapjs/tap-finished/compare/v0.0.1...v0.0.2) - 2022-09-22
 
 ### Commits
