@@ -42,11 +42,26 @@ test(function (t) {
 				comment: ''
 			},
 			failures: [ // these are Result instances
-				{ ok: false, id: 2, name: 'should be equal', diag: { operator: 'equal', expected: 5, actual: 4 } }
+				{ ok: false, id: 2, name: 'should be equal', fullname: 'should be equal',
+					diag: { operator: 'equal', expected: 5, actual: 4 },
+					buffered: false, tapError: null, skip: false, todo: false,
+					previous: null, plan: null, time: null, closingTestPoint: false
+				}
 			],
+			skips: [],
+			todos: [],
+			time: null,
+			passes: undefined,
 			asserts: [ // these are Result instances
-				{ ok: true, id: 1, name: '(unnamed assert)' },
-				{ ok: false, id: 2, name: 'should be equal', diag: { operator: 'equal', expected: 5, actual: 4 } }
+				{ ok: true, id: 1, name: '(unnamed assert)', fullname: '(unnamed assert)',
+					diag: null, buffered: false, tapError: null, skip: false, todo: false,
+					previous: null, plan: null, time: null, closingTestPoint: false
+				},
+				{ ok: false, id: 2, name: 'should be equal', fullname: 'should be equal',
+					diag: { operator: 'equal', expected: 5, actual: 4 },
+					buffered: false, tapError: null, skip: false, todo: false,
+					previous: null, plan: null, time: null, closingTestPoint: false
+				}
 			]
 		}, 'results matches expected object');
 	});

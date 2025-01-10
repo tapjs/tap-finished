@@ -35,9 +35,19 @@ test(function (t) {
 				comment: ''
 			},
 			failures: [],
+			skips: [],
+			todos: [],
+			time: null,
+			passes: undefined,
 			asserts: [ // Result instances
-				{ ok: true, id: 1, name: '(unnamed assert)' },
-				{ ok: true, id: 2, name: 'should be equal' }
+				{ ok: true, id: 1, name: '(unnamed assert)', fullname: '(unnamed assert)',
+					diag: null, buffered: false, tapError: null, skip: false, todo: false,
+					previous: null, plan: null, time: null, closingTestPoint: false
+				},
+				{ ok: true, id: 2, name: 'should be equal', fullname: 'should be equal',
+					diag: null, buffered: false, tapError: null, skip: false, todo: false,
+					previous: null, plan: null, time: null, closingTestPoint: false
+				}
 			]
 		}, 'results matches expected object');
 	});

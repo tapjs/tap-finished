@@ -3,9 +3,11 @@
     "version": "0.0.3",
     "description": "detect when tap output is finished",
     "main": "index.js",
+    "engines": {
+        "node": "20 || >=22"
+    },
     "dependencies": {
-        "object.assign": "^4.1.4",
-        "tap-parser": "^5.4.0"
+        "tap-parser": "^18.0.0"
     },
     "devDependencies": {
         "@ljharb/eslint-config": "^21.0.0",
@@ -29,8 +31,6 @@
     "testling": {
         "files": "test/*.js",
         "browsers": [
-            "ie/8",
-            "ie/9",
             "firefox/latest",
             "chrome/latest",
             "safari/latest",

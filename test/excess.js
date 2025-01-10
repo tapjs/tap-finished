@@ -38,9 +38,19 @@ test(function (t) {
 				comment: ''
 			},
 			failures: [],
+			skips: [],
+			todos: [],
+			time: null,
+			passes: undefined,
 			asserts: [ // these are Result instances
-				{ ok: true, id: 1, name: 'first thing' },
-				{ ok: true, id: 2, name: 'second thing' }
+				{ ok: true, id: 1, name: 'first thing', fullname: 'first thing',
+					buffered: false, tapError: null, skip: false, todo: false,
+					previous: null, plan: null, diag: null, time: null, closingTestPoint: false
+				},
+				{ ok: true, id: 2, name: 'second thing', fullname: 'second thing',
+					buffered: false, tapError: null, skip: false, todo: false,
+					previous: null, plan: null, diag: null, time: null, closingTestPoint: false
+				}
 			]
 		}, 'results matches expected object');
 	});

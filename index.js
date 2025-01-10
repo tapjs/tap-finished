@@ -1,7 +1,6 @@
 'use strict';
 
-var parser = require('tap-parser');
-var assign = require('object.assign');
+var Parser = require('tap-parser').Parser;
 
 module.exports = function (opts, cb) {
 	if (typeof opts === 'function') {
@@ -11,7 +10,7 @@ module.exports = function (opts, cb) {
 	if (!opts) { opts = {}; }
 	if (opts.wait === undefined) { opts.wait = 1000; }
 
-	var p = parser();
+	var p = new Parser();
 	var seen = { plan: null, asserts: [] };
 	var finished = false;
 	var ended = false;
@@ -20,7 +19,7 @@ module.exports = function (opts, cb) {
 		finished = true;
 
 		p.on('complete', function (finalResult) {
-			cb(assign({}, finalResult, { asserts: seen.asserts }));
+			cb(Object.assign({}, finalResult, { asserts: seen.asserts }));
 		});
 		if (opts.wait && !ended) {
 			setTimeout(function () { p.end(); }, opts.wait);
